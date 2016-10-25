@@ -6,10 +6,14 @@
   </head>
   <body>
     <!-- Include Scala.js compiled code -->
+    <script type="text/javascript" src="./target/scala-2.11/scala-io-demo-jsdeps.js"></script>
     <script type="text/javascript" src="./target/scala-2.11/scala-io-demo-fastopt.js"></script>
-    <!-- Run the app -->
-    <script type="text/javascript">
+    
+  <div id="app"></div>
+   
+    <script type="text/javascript"> 
       io.scala.scalajs.DemoApp().main();
     </script>
+   
   </body>
 </html>
