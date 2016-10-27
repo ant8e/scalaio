@@ -9,11 +9,16 @@ import org.scalajs.dom
 
 object DemoApp extends JSApp {
   def main(): Unit = {
-   
-  val Hello = ReactComponentB[String]("Hello")
-                .render_P(name => <.div("Hello  ", name))
-                .build
 
-    ReactDOM.render(Hello("scala.io"), dom.document.getElementById("app"))
-    }
+
+    val Counter = ReactComponentB[String]("Counter")
+      .initialState(0)
+      .render(scope => <.div(
+        <.div(s"${scope.props} : ${scope.state}"),
+        <.button("Inc"))
+      )
+      .build
+
+    ReactDOM.render(Counter("scala.io"), dom.document.getElementById("app"))
+  }
 }
