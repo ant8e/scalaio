@@ -15,7 +15,7 @@ object DemoApp extends JSApp {
       .initialState(0)
       .render(scope => <.div(
         <.div(s"${scope.props} : ${scope.state}"),
-        <.button("Inc"))
+        <.button("Inc"), ^.onClick --> scope.modState(s => s + 1))
       )
       .build
 
